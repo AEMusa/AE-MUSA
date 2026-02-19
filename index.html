@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AE MUSA - Escola Secundária de Camões</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --preto: #1D1B17;
+            --branco: #F7ECE2;
+            --azul: #1D81C7;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--azul);
+            color: var(--preto);
+            padding-top: 80px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .navbar-brand,
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .header-title {
+            text-shadow: 3px 3px 0 var(--preto);
+            transform: rotate(-2deg);
+            display: inline-block;
+        }
+
+        .box-shadow {
+            box-shadow: 5px 5px 0 var(--preto);
+        }
+
+        .bg-preto {
+            background-color: var(--preto);
+        }
+
+        .bg-branco {
+            background-color: var(--branco);
+        }
+
+        .bg-azul {
+            background-color: var(--azul);
+        }
+
+        .text-preto {
+            color: var(--preto);
+        }
+
+        .text-branco {
+            color: var(--branco);
+        }
+
+        .text-azul {
+            color: var(--azul);
+        }
+
+        .btn-musa {
+            background-color: var(--preto);
+            color: var(--branco);
+            border: 2px solid var(--preto);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn-musa:hover {
+            background-color: var(--branco);
+            color: var(--preto);
+        }
+
+        .logo-fixed {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1040;
+            width: 75px;
+            height: 75px;
+            background-color: var(--branco);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .navbar {
+            background-color: var(--branco);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link {
+            color: var(--preto) !important;
+        }
+
+        .nav-link:hover {
+            color: var(--azul) !important;
+        }
+
+        .nav-link.disabled {
+            color: #6c757d !important;
+            pointer-events: none;
+            text-decoration: line-through;
+        }
+
+        .dropdown-menu {
+            background-color: var(--branco);
+            border: 2px solid var(--preto);
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--azul);
+            color: var(--branco);
+        }
+
+        .dropdown-item.disabled {
+            color: #6c757d !important;
+            pointer-events: none;
+            text-decoration: line-through;
+        }
+
+        .dropdown-toggle.disabled {
+            pointer-events: none;
+        }
+
+        .hero-section {
+            background-color: var(--preto);
+            color: var(--branco);
+            padding: 60px 0;
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
+            border-bottom: 5px solid var(--branco);
+        }
+
+        .slogan {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--azul);
+            margin: 0;
+            margin-top: 15px;
+        }
+
+        .card {
+            border: 2px solid var(--preto);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img-top {
+            border-bottom: 2px solid var(--preto);
+        }
+
+        .social-icon {
+            font-size: 1.8rem;
+            margin: 0 15px;
+            color: var(--preto);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            color: var(--azul);
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background-color: var(--preto);
+            color: var(--branco);
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .rotacionada {
+            transform-origin: center;
+            max-width: 600px;
+            margin: 0 !important;
+            box-shadow: none;
+        }
+
+        .nomarginsec {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        /* Estilo para o ícone personalizado do LinkTree */
+        .fa-linktree {
+            background: linear-gradient(45deg, #39e09b, #2cb67d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Logo Fixo -->
+    <div class="logo-fixed">
+        <img src="logo.jpeg" alt="AE MUSA" class="logo-img">
+    </div>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">AE MUSA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="departamentos.html" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Departamentos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="departamentos.html#apoio-aluno">Apoio ao Aluno</a></li>
+                            <li><a class="dropdown-item" href="departamentos.html#tecnologia">Tecnologia e Inovação</a>
+                            </li>
+                            <li><a class="dropdown-item" href="departamentos.html#artes">Artes e Cultura</a></li>
+                            <li><a class="dropdown-item" href="departamentos.html#eventos">Gestão de Eventos</a></li>
+                            <li><a class="dropdown-item" href="departamentos.html#comunicacao">Comunicação</a></li>
+                            <li><a class="dropdown-item" href="departamentos.html#desporto">Desporto</a></li>
+                            <li><a class="dropdown-item" href="departamentos.html#ciencias">Ciências e Ambiente</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clubes.html">Clubes/Projetos</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="agenda.html">Agenda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="apoio-aluno.html">Apoio ao Aluno</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container text-center nomarginsec">
+            <h1 class="header-title display-4 text-branco">Associação de Estudantes MUSA</h1>
+            <p class="slogan">A Mudar o Padrão</p>
+            <img src="IMG_3974.PNG" alt="AE MUSA" class="img-fluid mt-4 box-shadow rotacionada">
+        </div>
+    </section>
+
+    <!-- Destaques do Mês -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4 header-title">Destaques do Mês</h2>
+        <div class="row">
+            <!--
+            <div class="col-md-4">
+                <div class="card bg-branco">
+                    <img src="https://via.placeholder.com/300x200/1D81C7/F7ECE2?text=Evento+1" class="card-img-top" alt="Evento 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Festa de Início de Ano</h5>
+                        <p class="card-text">Uma festa para celebrar o início do ano letivo e conhecer os novos colegas.</p>
+                        <a href="#" class="btn btn-musa">Saber Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-branco">
+                    <img src="https://via.placeholder.com/300x200/1D81C7/F7ECE2?text=Evento+2" class="card-img-top" alt="Evento 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Workshop de Estudo</h5>
+                        <p class="card-text">Aprende técnicas de estudo eficazes com os nossos especialistas.</p>
+                        <a href="#" class="btn btn-musa">Saber Mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-branco">
+                    <img src="https://via.placeholder.com/300x200/1D81C7/F7ECE2?text=Evento+3" class="card-img-top" alt="Evento 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Torneio de Futsal</h5>
+                        <p class="card-text">Participa no torneio de futsal entre turmas. Inscrições abertas!</p>
+                        <a href="#" class="btn btn-musa">Saber Mais</a>
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+    </section>
+
+    <!-- Parcerias -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4 header-title">Parcerias</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-3 col-6 text-center mb-4">
+                <div class="bg-branco p-3 box-shadow">
+                    <h5>A</h5>
+                    <!--
+                    <img src="https://via.placeholder.com/150x100/1D1B17/F7ECE2?text=Parceiro+1" alt="Parceiro 1"
+                        class="img-fluid">
+                    -->
+                </div>
+            </div>
+            <div class="col-md-3 col-6 text-center mb-4">
+                <div class="bg-branco p-3 box-shadow">
+                    <h5>B</h5>
+                    <!--
+                    <img src="https://via.placeholder.com/150x100/1D1B17/F7ECE2?text=Parceiro+1" alt="Parceiro 1"
+                        class="img-fluid">
+                    -->
+                </div>
+            </div>
+            <div class="col-md-3 col-6 text-center mb-4">
+                <div class="bg-branco p-3 box-shadow">
+                    <h5>C</h5>
+                    <!--
+                    <img src="https://via.placeholder.com/150x100/1D1B17/F7ECE2?text=Parceiro+1" alt="Parceiro 1"
+                        class="img-fluid">
+                    -->
+                </div>
+            </div>
+            <div class="col-md-3 col-6 text-center mb-4">
+                <div class="bg-branco p-3 box-shadow">
+                    <h5>D</h5>
+                    <!--
+                    <img src="https://via.placeholder.com/150x100/1D1B17/F7ECE2?text=Parceiro+1" alt="Parceiro 1"
+                        class="img-fluid">
+                    -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contactos e Formulário -->
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="header-title mb-4">Contactos</h2>
+                <div class="bg-branco p-4 box-shadow">
+                    <p><strong>Email:</strong> aemusa.escamoes@gmail.com</p>
+                    <p><strong>Siga-nos nas redes sociais:</strong></p>
+                    <div class="d-flex justify-content-start">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/ae.musa.escamoes/" class="social-icon" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@lista.musa.escamoes" class="social-icon" target="_blank" title="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <!-- LinkTree -->
+                        <a href="https://linktr.ee/ListaMusa" class="social-icon" target="_blank" title="Linktree">
+                            <i class="fas fa-tree fa-linktree"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div class="col-md-6">
+                <h2 class="header-title mb-4">Dúvidas/Sugestões</h2>
+                <div class="bg-branco p-4 box-shadow">
+                    <p>Tens alguma dúvida ou sugestão para a AE MUSA? Preenche o nosso formulário!</p>
+                    <a href="https://forms.gle/example" class="btn btn-musa" target="_blank">Formulário Google</a>
+                </div>
+            </div>
+            -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>AE MUSA - Associação de Estudantes do Liceu Camões 2025/2026<br>
+                "A Mudar o Padrão"</p>
+        </div>
+    </footer>
+    <!-- MEDIA EDITÁVEL -->
+    <section class="container my-5">
+        <h2 class="header-title mb-4">Multimédia</h2>
+        <div class="bg-branco p-4 box-shadow">
+            <!-- Substitui os src pelos teus ficheiros -->
+            <img src="exemplo.jpg" alt="Imagem" class="img-fluid mb-3">
+            <video controls class="w-100">
+                <source src="exemplo.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
